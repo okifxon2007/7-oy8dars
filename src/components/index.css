@@ -1,0 +1,135 @@
+.header {
+    display: flex;
+    background-color: #0A146E;
+}
+
+.conta {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+}
+
+.header ul {
+    display: flex;
+    list-style-type: none;
+    gap: 30px;
+    margin-top: 25px;
+    margin-left: 85px;
+}
+
+.header h1 {
+    font-size: 25px;
+}
+
+.header h3 {
+    font-size: 15px;
+    margin-left: 80px;
+    margin-top: 25px;
+}
+
+.bghed {
+    background-color: #0A146E;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header button {
+    color: white;
+    background-color: #006CE0;
+    width: 130px;
+    height: 38px;
+    border-radius: 8px;
+    border: 2px solid #006CE0;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 40px;
+    margin-top: 13px;
+}
+
+.hrh {
+    background-color: #0A146E;
+    height: 550px;
+}
+
+.main {
+    text-align: center;
+    margin-top: 70px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+.valone {
+    width: 1000px;
+    height: 450px;
+    background-color: blue;
+    position: absolute;
+    margin-left: 90px;
+    transform: translateY(-280px);
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: -2px 2px 8px 2px rgb(90, 90, 90);
+}
+
+.valone ul {
+    display: flex;
+    list-style-type: none;
+    gap: 200px;
+    font-size: 20px;
+    margin-left: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.valtwo form {
+    display: flex;
+    gap: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.valtwo input {
+    width: 250px;
+    height: 45px;
+    border-radius: 5px;
+    margin-top: 23px;
+}
+
+.slt{
+    margin-top: 23px;
+    width: 280px;
+    height: 50px;
+    border: 1px solid black; 
+    border-radius: 5px;
+}
+
+.valtwo p {
+    font-size: 12px;
+    border: 1px solid black;
+    width: 280px;
+    height: 40px;
+    font-size: 20px;
+    padding-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+    padding-left: 8px;
+}
+
+.valtwo label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.valtwo h1 {
+    margin-left: 60px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.bit{
+    width: 220px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid blue;
+    background-color: blue;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    margin-left: 680px;
+    cursor: pointer;
+}

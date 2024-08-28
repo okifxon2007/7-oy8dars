@@ -133,3 +133,28 @@
     margin-left: 680px;
     cursor: pointer;
 }
+.immg{
+    width: 30px;
+}
+.contry-wr{
+    display: flex;
+    width: full;
+    gap: 5px;
+}
+.contry-wr img{
+    width: 40px;
+    height:40px;
+    border-radius:4px; 
+    margin-top: 14px;
+    margin-right: 10px;
+}
+.contry-wr h5{
+    margin-left: 5px;
+    margin-top: px;
+}
+.oxir img{
+    width: 20px;
+}
+.oxir{
+    display: flex;
+}

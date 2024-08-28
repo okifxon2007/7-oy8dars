@@ -24,7 +24,7 @@ const Valyuta = () => {
       const rateToUSD = parseFloat(Object.values(selectedCurrency.currencies)[0].rateToUSD);
       const amount = parseFloat(amountRef.current.value);
       if (!isNaN(amount)) {
-        const calculatedAmount = (amount * rateToUSD).toFixed(2);
+        const calculatedAmount = (amount * rateToUSD).toFixed(1);
         setVerify(`$${calculatedAmount} USD`);
       } else {
         setVerify('Iltimos, togri miqdorni kiriting.');
@@ -60,7 +60,7 @@ const Valyuta = () => {
                   <Select 
                     className='slt'
                     showSearch
-                    placeholder='Valyutani tanlang'
+                    placeholder={value || 'Valyutani tanlang'}
                     optionFilterProp="children"
                     onChange={(value) => setValue(value)} 
                     filterOption={(input, option) =>
@@ -69,20 +69,25 @@ const Valyuta = () => {
                   >
                     {opt.map((currency, index) => {
                       return currency.currencies && (
-                        <Option 
+                        <Option
                           key={currency.id || index} 
                           value={Object.keys(currency.currencies)[0]} 
                         >
-                          {Object.values(currency.currencies)[0].name}
+                          <div className="contry-wr">
+                            <img className='immg' src={currency.flag} alt="" />
+                            <h4>{Object.keys(currency.currencies)[0]}-</h4>
+                            <h4>{Object.values(currency.currencies)[0].name}</h4>
+
+                          </div>
                         </Option>
                       );
                     })}
                   </Select>
                 </div>
-                <div className="fthree">
-                  <label>To</label> <br />
-                  <p>USD</p>
-                </div>
+                  <div className="fthree">
+                    <label>To</label> <br />
+                    <p>USD - US Dollars</p>
+                  </div>
               </form>
               <h1>{verify}</h1>
             </div>
@@ -91,7 +96,7 @@ const Valyuta = () => {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Valyuta;

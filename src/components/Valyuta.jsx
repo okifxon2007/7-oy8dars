@@ -24,8 +24,8 @@ const Valyuta = () => {
       const rateToUSD = parseFloat(Object.values(selectedCurrency.currencies)[0].rateToUSD);
       const amount = parseFloat(amountRef.current.value);
       if (!isNaN(amount)) {
-        const calculatedAmount = (amount * rateToUSD).toFixed(1);
-        setVerify(`$${calculatedAmount} USD`);
+        const calculatedAmount = (amount * rateToUSD).toFixed(2);
+        setVerify(`${calculatedAmount} ,000`);
       } else {
         setVerify('Iltimos, togri miqdorni kiriting.');
       }
@@ -51,6 +51,7 @@ const Valyuta = () => {
                 <div className="fone">
                   <label>Amount</label> <br />
                   <input 
+                  placeholder='$100.00'
                     type="text" 
                     ref={amountRef} 
                   />
@@ -63,9 +64,11 @@ const Valyuta = () => {
                     placeholder={value || 'Valyutani tanlang'}
                     optionFilterProp="children"
                     onChange={(value) => setValue(value)} 
-                    filterOption={(input, option) =>
-                      option.children.toLowerCase().includes(input.toLowerCase())
-                    }
+                    filterOption={(input, option) => {
+                      const children = React.Children.toArray(option.props.children);
+                      const text = children.map(child => typeof child === 'string' ? child : child.props.children).join(' ');
+                      return text.toLowerCase().includes(input.toLowerCase());
+                    }}
                   >
                     {opt.map((currency, index) => {
                       return currency.currencies && (
@@ -84,10 +87,36 @@ const Valyuta = () => {
                     })}
                   </Select>
                 </div>
-                  <div className="fthree">
-                    <label>To</label> <br />
-                    <p>USD - US Dollars</p>
-                  </div>
+                <div className="fthree">
+                  <label>To</label> <br />
+                <Select 
+                    className='slt'
+                    showSearch
+                    placeholder={value || 'Valyutani tanlang'}
+                    optionFilterProp="children"
+                    onChange={(value) => setValue(value)} 
+                    filterOption={(input, option) => {
+                      const children = React.Children.toArray(option.props.children);
+                      const text = children.map(child => typeof child === 'string' ? child : child.props.children).join(' ');
+                      return text.toLowerCase().includes(input.toLowerCase());
+                    }}
+                  >
+                    {opt.map((currency, index) => {
+                      return currency.currencies && (
+                        <Option
+                          key={currency.id || index} 
+                          value={Object.keys(currency.currencies)[0]} 
+                        >
+                          <div className="contry-wr">
+                            <img className='immg' src={currency.flag} alt="" />
+                            <h4>{Object.keys(currency.currencies)[0]}-</h4>
+                            <h4>{Object.values(currency.currencies)[0].name}</h4>
+                          </div>
+                        </Option>
+                      );
+                    })}
+                  </Select>
+                </div>
               </form>
               <h1>{verify}</h1>
             </div>
